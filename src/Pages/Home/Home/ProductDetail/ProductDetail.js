@@ -3,8 +3,6 @@ import { useContext } from 'react';
 import { AuthContext } from '../../../../contexts/AuthProvider/AuthProvider';
 import BookingModal1 from '../../BookingModal1/BookingModal1';
 
-
-
 const ProductDetail = ({product}) => {
     const {user}=useContext(AuthContext);
     const {name,location,img,resalePrice,originalPrice,usedDuration,}=product;

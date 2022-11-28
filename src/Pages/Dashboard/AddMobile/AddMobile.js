@@ -6,7 +6,7 @@ const AddMobile = () => {
     const navigate=useNavigate();
     const handleAddUser=event=>{
         event.preventDefault();
-        fetch('http://localhost:5000/addmobiles',{
+        fetch('https://used-mobile-phone-resale-market-server.vercel.app/addmobiles',{
             method:'POST',
             headers:{
                 'content-type':'application/json'

@@ -6,7 +6,7 @@ const MyMobiles = () => {
 const {data:addmobiles=[],refetch}=useQuery({
     queryKey:['addmobiles'],
     queryFn:async()=>{
-        const res=await fetch('http://localhost:5000/addmobiles');
+        const res=await fetch('https://used-mobile-phone-resale-market-server.vercel.app/addmobiles');
         const data=await res.json();
         return data;
     }

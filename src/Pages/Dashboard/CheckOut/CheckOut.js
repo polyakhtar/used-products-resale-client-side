@@ -10,7 +10,7 @@ const stripe=useStripe();
 const elements=useElements();
 const {productPrice,name,email,_id}=booking;
 useEffect(() => {
-    fetch("http://localhost:5000/create-payment-intent", {
+    fetch("https://used-mobile-phone-resale-market-server.vercel.app/create-payment-intent", {
       method: "POST",
       headers: { 
         "Content-Type": "application/json",
@@ -71,7 +71,7 @@ useEffect(() => {
                 // setTransectionId(paymentIntent.id)
                 // stor payment into the database
         
-                fetch('http://localhost:5000/payments',{
+                fetch('https://used-mobile-phone-resale-market-server.vercel.app/payments',{
                   method:"POST",
                   headers:{
                     'content-type':'application/json',

@@ -6,7 +6,7 @@ const AllBuyers = () => {
   const {data:Users=[],refetch}=useQuery({
     queryKey:['Users'],
     queryFn:async()=>{
-      const res=await fetch('http://localhost:5000/users/User',{
+      const res=await fetch('https://used-mobile-phone-resale-market-server.vercel.app/users/User',{
         headers:{
           authorization:`bearer ${localStorage.getItem('accessToken')}`
         }
@@ -17,7 +17,7 @@ const AllBuyers = () => {
   })
     
     const handleDelete=id=>{
-      fetch(`http://localhost:5000/users/User/${id}`,{
+      fetch(`https://used-mobile-phone-resale-market-server.vercel.app/users/User/${id}`,{
       method:"DELETE",
       
     })

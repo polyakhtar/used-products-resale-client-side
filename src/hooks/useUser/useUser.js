@@ -6,7 +6,7 @@ const useUser = email => {
     useEffect(()=>{
 if(email){
     console.log(email)
-fetch(`http://localhost:5000/users/User/${email}`)
+fetch(`https://used-mobile-phone-resale-market-server.vercel.app/users/User/${email}`)
 .then(res=>res.json())
 .then(data=>{
     console.log('user',data)

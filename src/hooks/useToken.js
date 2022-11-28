@@ -5,7 +5,7 @@ const useToken=email=>{
     const [token,setToken]=useState('');
     useEffect(()=>{
        if(email){
-        fetch(`https://doctors-portal-server-pearl-omega.vercel.app/jwt?email=${email}`)
+        fetch(`https://used-mobile-phone-resale-market-server.vercel.app/jwt?email=${email}`)
       .then(res=>res.json())
       .then(data=>{
         console.log(data)

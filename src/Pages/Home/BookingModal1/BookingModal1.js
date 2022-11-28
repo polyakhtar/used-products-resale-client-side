@@ -27,7 +27,7 @@ const BookingModal1 = ({product}) => {
          location:location
      }
     //  console.log(bookingDetail);
-     fetch('http://localhost:5000/bookings',{
+     fetch('https://used-mobile-phone-resale-market-server.vercel.app/bookings',{
          method:'POST',
          headers:{
              'content-type':'application/json'
