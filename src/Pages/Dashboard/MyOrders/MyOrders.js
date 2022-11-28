@@ -3,7 +3,6 @@ import { useQuery } from '@tanstack/react-query';
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
-
 const MyOrders = () => {
 const {user}=useContext(AuthContext);
 const url=`http://localhost:5000/bookings?email=${user.email}`;
