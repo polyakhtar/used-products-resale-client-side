@@ -77,7 +77,7 @@ console.log(sellers)
     </tbody>
   </table>
 </div>
-        </div>
+   </div>
     );
 };
 
