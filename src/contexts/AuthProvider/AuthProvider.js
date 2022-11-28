@@ -47,5 +47,4 @@ const authInfo={user,
     </AuthContext.Provider>
     );
 };
-
 export default AuthProvider;
