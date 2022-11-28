@@ -14,7 +14,6 @@ const navigate=useNavigate();
     .catch(err=>{
         console.log(err)
     })
-
     }
     return (
         <div className='text-center mt-60'>
