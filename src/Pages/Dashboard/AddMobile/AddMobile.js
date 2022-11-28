@@ -21,7 +21,7 @@ const AddMobile = () => {
                 navigate('/dashboard/mymobiles')
             }
         })
-        console.log(mobiles)
+        console.log(mobiles);
     }
     const handleInputBlur=event=>{
         const value=event.target.value;
