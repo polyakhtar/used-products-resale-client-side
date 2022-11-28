@@ -1,6 +1,5 @@
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import React, { useEffect, useState } from 'react';
-
 const CheckOut = ({booking}) => {
     const [clientSecret, setClientSecret] = useState("");
     const [success,setSuccess]=useState('');
