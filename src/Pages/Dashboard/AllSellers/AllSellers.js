@@ -42,8 +42,7 @@ const AllSellers = () => {
                 toast.success('Verified By Admin Successfully');
                 refetch();
             }
-        })
-        
+        })   
     }
 console.log(sellers)
     return (
