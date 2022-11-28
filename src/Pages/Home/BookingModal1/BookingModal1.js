@@ -39,7 +39,6 @@ const BookingModal1 = ({product}) => {
          // console.log(data)
          if(data.acknowledged){
          toast.success('Booking Confirmed');  
-
      }
      else{
          toast.error(data.message)
