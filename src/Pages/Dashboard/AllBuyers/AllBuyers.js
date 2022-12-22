@@ -1,9 +1,10 @@
 import { useQuery } from '@tanstack/react-query';
 import React from 'react';
 import toast from 'react-hot-toast';
+import Loading from '../../Shared/Loading/Loading';
 
 const AllBuyers = () => {
-  const {data:Users=[],refetch}=useQuery({
+  const {data:Users=[],refetch,isLoading}=useQuery({
     queryKey:['Users'],
     queryFn:async()=>{
       const res=await fetch('https://used-mobile-phone-resale-market-server.vercel.app/users/User',{
@@ -31,8 +32,11 @@ const AllBuyers = () => {
     })
       
     }
+    if(isLoading){
+      return <Loading></Loading>
+    }
     return (
-        <div>
+        <div className='py-6'>
             <h2 className='text-3xl mb-6'>All Buyers</h2>
             <div className="overflow-x-auto">
   <table className="table w-full">

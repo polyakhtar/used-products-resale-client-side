@@ -3,10 +3,11 @@ import { useQuery } from '@tanstack/react-query';
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
+import Loading from '../../Shared/Loading/Loading';
 const MyOrders = () => {
 const {user}=useContext(AuthContext);
 const url=`https://used-mobile-phone-resale-market-server.vercel.app/bookings?email=${user.email}`;
-const {data:bookings=[]}=useQuery({
+const {data:bookings=[],isLoading}=useQuery({
     queryKey:['bookings',user?.email],
     queryFn:async()=>{
         const res=await fetch(url,{
@@ -18,8 +19,11 @@ const {data:bookings=[]}=useQuery({
         return data;
     }
 })
+if(isLoading){
+  return <Loading></Loading>
+}
     return (
-        <div>
+        <div className='py-6'>
            <h2 className='text-3xl my-8'>My Orders:{bookings.length}</h2> 
            <div className="overflow-x-auto">
   <table className="table table-zebra w-full">
