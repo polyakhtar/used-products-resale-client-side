@@ -1,5 +1,5 @@
 WEBSITE NAME : Used Phone Resale Market
-WEBSITE LINK : https://resale-phone.web.app
+WEBSITE LINK : https://resale-phone.firebaseapp.com/
 
 Features:
 1|This is the website whcih related with selling and buying old product.
