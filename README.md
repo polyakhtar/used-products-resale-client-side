@@ -17,3 +17,5 @@ Functionalities:
 6|Stripe React js
 
 =======================
+Admin Email: poly322@gmail.com
+Password:  Pm1234%^&
