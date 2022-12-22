@@ -1,10 +1,11 @@
 import { useQuery } from '@tanstack/react-query';
 import React from 'react';
+import Loading from '../../../Shared/Loading/Loading';
 import CategoriesData from '../CategoriesData/CategoriesData';
 
 
 const Categories = () => {
-const {data:categories=[]}=useQuery({
+const {data:categories=[],isLoading}=useQuery({
       queryKey:['categories'],
       queryFn:async()=>{
         const res=await fetch('https://used-mobile-phone-resale-market-server.vercel.app/categories');
@@ -12,6 +13,9 @@ const {data:categories=[]}=useQuery({
         return data;
       }
 })
+if(isLoading){
+    return <Loading></Loading>
+}
     return (
         <div>
             <h1 className='text-4xl text-blue-500 font-bold text-center py-16'>Categories</h1>
