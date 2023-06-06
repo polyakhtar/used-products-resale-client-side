@@ -36,8 +36,8 @@ const AllBuyers = () => {
       return <Loading></Loading>
     }
     return (
-        <div className='py-6'>
-            <h2 className='text-3xl mb-6'>All Buyers</h2>
+        <div className='py-8 px-4'>
+            <h2 className='text-4xl mb-6 font-bold text-center'>All Buyers</h2>
             <div className="overflow-x-auto">
   <table className="table w-full">
     <thead>

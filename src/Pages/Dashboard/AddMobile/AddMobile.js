@@ -32,9 +32,9 @@ const AddMobile = () => {
         
     }
     return (
-        <div className='w-3/5 mx-auto text-center'>
-        <h2 className='text-3xl font-bold text-blue-700 my-4'>Please add a new Mobile</h2>
-        <form onSubmit={handleAddUser}>
+        <div className='text-center py-8 px-4'>
+        <h2 className='text-4xl font-bold text-center mb-6'>Please add a new Mobile</h2>
+        <form className='w-3/5 mx-auto' onSubmit={handleAddUser}>
         
             <input onBlur={handleInputBlur} name='name' type="text" placeholder="Mobile Name" className="input w-full input-bordered m-4" requird/>
             <br/>
@@ -53,7 +53,7 @@ const AddMobile = () => {
             <input onBlur={handleInputBlur} name='img' type="text" placeholder="Image Url" className="input w-full input-bordered m-4" requird/>
             <br/>
 
-            <button className='btn btn-primary mb-4'>Add Mobile</button>
+            <button className='btn w-80 btn-primary mb-4'>Add Mobile</button>
         </form>
     </div>
     );

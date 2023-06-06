@@ -73,7 +73,7 @@ const handleGoogleSignIn=()=>{
       <input className='btn btn-primary w-full' type="submit" value='Login'/>
       {logInError && <p className='text-red-400'>{logInError}</p>}
     </form>
-    <p>New to doctors portal <Link className='text-secondary' to='/signup'>Create an account</Link></p>
+    <p className='mt-4'>New to doctors portal <Link className='text-secondary' to='/signup'>Create an account</Link></p>
     <div className="divider">OR</div>
     <button onClick={handleGoogleSignIn} className='btn btn-outline w-full'>Continue With Google</button>
         </div>

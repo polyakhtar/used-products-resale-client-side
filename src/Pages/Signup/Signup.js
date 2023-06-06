@@ -108,7 +108,7 @@ className="input input-bordered w-full max-w-xs"/>
   <input className='btn btn-primary w-full mt-4' type="submit" value='SignUp'/>
 </form>
 {signUpError && <p className='text-red-600'>{signUpError}</p>}
-<p>Already have an account? <Link className='text-secondary' to='/login'>Please Login</Link></p>
+<p className='mt-4'>Already have an account? <Link className='text-secondary' to='/login'>Please Login</Link></p>
 <div className="divider">OR</div>
 <button onClick={handleGoogleSignIn} className='btn btn-outline w-full'>Continue With Google</button>
     </div>

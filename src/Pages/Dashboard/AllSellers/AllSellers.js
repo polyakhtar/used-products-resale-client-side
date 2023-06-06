@@ -50,8 +50,8 @@ if(isLoading){
   return <Loading></Loading>
 }
     return (
-        <div>
-            <h2 className='text-3xl mb-6'>All Sellers</h2>
+        <div className='py-8 px-4'>
+            <h2 className='text-4xl mb-6 text-center font-bold'>All Sellers</h2>
             <div className="overflow-x-auto">
   <table className="table w-full">
     <thead>
@@ -81,6 +81,13 @@ if(isLoading){
     </tbody>
   </table>
 </div>
+{/* <h2
+                className={`${
+                  open && ""
+                } absolute left-48 bg-white font-semibold whitespace-pre text-gray-900 rounded-md drop-shadow-lg px-0 py-0 w-0 overflow-hidden group-hover:px-2 group-hover:py-1 group-hover:left-14 group-hover:duration-300 group-hover:w-fit  `}
+              >
+                {menu?.name}
+              </h2> */}
    </div>
     );
 };

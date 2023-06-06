@@ -18,8 +18,8 @@ if(isLoading){
 }
     return (
         <div>
-            <h1 className='text-4xl text-blue-500 font-bold text-center py-16'>Categories</h1>
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
+            <h1 className='text-4xl  text-blue-500 font-bold text-center py-16'>Categories</h1>
+            <div className='container mx-auto lg:px-2 px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
            {
             categories.map(category=><CategoriesData 
             key={category._id}

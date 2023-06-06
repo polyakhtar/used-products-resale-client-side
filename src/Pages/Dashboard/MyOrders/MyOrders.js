@@ -23,8 +23,8 @@ if(isLoading){
   return <Loading></Loading>
 }
     return (
-        <div className='py-6'>
-           <h2 className='text-3xl my-8'>My Orders:{bookings.length}</h2> 
+        <div className='py-8 px-4'>
+           <h2 className='text-4xl font-bold text-center mb-6'>My Orders:{bookings.length}</h2> 
            <div className="overflow-x-auto">
   <table className="table table-zebra w-full">
     <thead>
