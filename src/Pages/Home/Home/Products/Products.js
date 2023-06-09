@@ -1,29 +1,22 @@
-import { useLoaderData } from 'react-router-dom';
 import ProductDetail from '../ProductDetail/ProductDetail';
-import { useState } from 'react';
-import { useQuery } from '@tanstack/react-query';
-// import ProductDetails from '../ProductDetails/ProductDetails';
+import { useEffect, useState } from 'react';
+import BookingModal from '../../BookingModal/BookingModal';
+import { useParams } from 'react-router-dom';
+
 
 
 const Products = () => {
-    const product=useLoaderData();
-
-//  console.log(products);
-const [loading, setLoading] = useState(false);
+    const {id}=useParams();
   const [bookings, setBookings] = useState(null);
-  const { data: products = [] } = useQuery({
-    queryKey: ["products"],
-
-    queryFn: async () => {
-      setLoading(true);
-      const res = await fetch(
-        `http://localhost:5000/products?id=${product._id}`
-      );
-      const data = res.json();
-      setLoading(false);
-      return data;
-    },
-  });
+  const [products,setProducts]=useState([]);
+  useEffect(()=>{
+    fetch(`https://used-mobile-phone-resale-market-server.vercel.app/products/${id}`)
+    .then(res=>res.json())
+    .then(data=>{
+        // console.log(data)
+        setProducts(data)
+    })
+},[id])
 
     return (
         <div className='py-4'>
@@ -33,7 +26,11 @@ const [loading, setLoading] = useState(false);
                 products.map(product=><ProductDetail
                 key={product._id}
                 product={product}
+                setBookings={setBookings}
                 ></ProductDetail>)
+                }
+                {
+                  bookings && <BookingModal products={products} bookings={bookings}></BookingModal>
                 }
             </div>
         </div>

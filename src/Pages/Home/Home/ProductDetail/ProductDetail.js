@@ -1,12 +1,8 @@
 
-import { useContext } from 'react';
-import { AuthContext } from '../../../../contexts/AuthProvider/AuthProvider';
-import BookingModal1 from '../../BookingModal1/BookingModal1';
 
-const ProductDetail = ({product}) => {
-  
 
-    const {user}=useContext(AuthContext);
+
+const ProductDetail = ({product,setBookings}) => {
     const {name,location,img,resalePrice,originalPrice,usedDuration,}=product;
     return (
         <div className='px-6'>
@@ -21,13 +17,12 @@ const ProductDetail = ({product}) => {
     <div className="card-actions flex items-center">
       <div className='flex justify-center items-center'>
 </div>
-      <label htmlFor='booking-modal' className="btn btn-primary">Book Now</label>
+      <label htmlFor='booking-modal' className="btn btn-primary" onClick={()=>setBookings(product)}>Book Now</label>
     </div>
   </div>
 </div>
-<BookingModal1
-product={product}
-></BookingModal1>
+
+
 </div> 
     );
 };

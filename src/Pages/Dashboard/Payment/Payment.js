@@ -9,7 +9,7 @@ const Payment = () => {
 const booking=useLoaderData();
 // console.log(booking);                                
     return (
-        <div>
+        <div className='mx-10'>
             <h2 className='text-3xl my-4'>{booking.productName}</h2>
             <p>Please pay <strong>{booking.productPrice}</strong> for your Product</p>
             <div className='w-96 my-12'>

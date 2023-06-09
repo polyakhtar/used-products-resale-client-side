@@ -17,6 +17,7 @@ import PrivateRoute from "./PrivateRoute/PrivateRoute";
 import AdminRoute from '../Routes/AdminRoute/AdminRoute';
 import SellerRoute from '../Routes/SellerRoute/SellerRoute';
 import UserRoute from "./UserRoute/UserRoute";
+import AddReview from "../Pages/Dashboard/AddReview/AddReview";
 
 
 const router=createBrowserRouter([
@@ -44,7 +45,6 @@ const router=createBrowserRouter([
             {
                 path:'/products/:id',
                 element:<PrivateRoute><Products></Products></PrivateRoute>,
-                loader:({params})=>fetch(`http://localhost:5000/products/${params.id}`)
             }
         ]
     },
@@ -72,6 +72,10 @@ const router=createBrowserRouter([
             {
                 path:'/dashboard/myorders',
                 element:<UserRoute><MyOrders></MyOrders></UserRoute>
+            },
+            {
+                path:'/dashboard/addreview',
+                element:<AddReview></AddReview>
             },
             {
                 path:'/dashboard/payment/:id',

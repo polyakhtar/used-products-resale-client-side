@@ -44,12 +44,12 @@ if(isLoading){
                 <td>
                 <div className="avatar">
                <div className="w-24 rounded">
-              <img src={booking.productUrl} alt="" />
+              <img src={booking.phoneImage} alt="" />
               </div>
              </div>
                 </td>
                 <td>{booking.productName}</td>
-                <td>{booking.productPrice}</td>
+                <td>{booking.price}</td>
                 <td>
                 {
             !booking.paid && <Link to={`/dashboard/payment/${booking._id}`}><button className='btn btn-primary btn-sm'>Pay</button></Link>
