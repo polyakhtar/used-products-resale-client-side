@@ -7,7 +7,8 @@ const SellUpWorkProcess = () => {
     return (
         <div className='py-16'>
             <h1 className='text-5xl text-center text-blue-500 py-12'>HOW SELLUP WORKS</h1>
-            <div className='container mx-auto lg:px-2 px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6'>    
+            <div className=' grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6' style={{paddingLeft:'4%',
+          paddingRight:'4%'}}>    
             <div className="card bg-blue-50 shadow-xl">
   <figure className="px-10 pt-10">
     <img src={step1} alt="Shoes" className="" />

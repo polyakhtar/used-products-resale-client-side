@@ -11,7 +11,7 @@ const Contact = () => {
                 Ask us everything and we would love
                 to hear from you
               </p>
-              <form className="mt-12" >
+              <form className="mt-12" action="https://formsubmit.co/poly09876pm@gmail.com" method="POST">
                 <div className="-mx-2 md:items-center md:flex">
                   <div className="flex-1 px-2">
                     <label className="block mb-2 text-sm text-gray-600 dark:text-gray-200">Full Name</label>
