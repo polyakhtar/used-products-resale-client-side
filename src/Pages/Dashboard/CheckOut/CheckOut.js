@@ -8,19 +8,19 @@ const CheckOut = ({booking}) => {
 const [cardError,setCardError]=useState('');
 const stripe=useStripe();
 const elements=useElements();
-const {productPrice,name,email,_id}=booking;
+const {price,productName,email,_id}=booking;
 useEffect(() => {
-    fetch("https://used-mobile-phone-resale-market-server.vercel.app/create-payment-intent", {
+    fetch("http://localhost:5000/create-payment-intent", {
       method: "POST",
       headers: { 
         "Content-Type": "application/json",
         authorization:`bearer ${localStorage.getItem('accessToken')}`
      },
-      body: JSON.stringify({ productPrice }),
+      body: JSON.stringify({ price }),
     })
       .then((res) => res.json())
       .then((data) => setClientSecret(data.clientSecret));
-  }, [productPrice]);
+  }, [price]);
     const handleSubmit = async (event) => {
         event.preventDefault();
     
@@ -32,7 +32,7 @@ useEffect(() => {
         if (card == null) {
           return;
         }
-        const {error, paymentMethod} = await stripe.createPaymentMethod({
+        const {error} = await stripe.createPaymentMethod({
             type: 'card',
             card,
           });
@@ -49,7 +49,7 @@ useEffect(() => {
            payment_method: {
              card: card,
              billing_details: {
-               name: name,
+               name: productName,
                email:email,
              },
            },
@@ -60,7 +60,7 @@ useEffect(() => {
                 return;
               }
               const payment={
-                productPrice,
+                price,
                 transectionId:paymentIntent.id,
                 email,
                 bookingId:_id
@@ -71,7 +71,7 @@ useEffect(() => {
                 // setTransectionId(paymentIntent.id)
                 // stor payment into the database
         
-                fetch('https://used-mobile-phone-resale-market-server.vercel.app/payments',{
+                fetch('http://localhost:5000/payments',{
                   method:"POST",
                   headers:{
                     'content-type':'application/json',

@@ -28,7 +28,7 @@ const handleSubmit = (event) => {
     location
   ) => {
     const feedback = { name, email, photoURL, review,location };
-    fetch("https://used-mobile-phone-resale-market-server.vercel.app/review", {
+    fetch("http://localhost:5000/review", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -45,7 +45,7 @@ const handleSubmit = (event) => {
   };
 
     return (
-        <div className='py-8 px-2'>
+        <div className='py-8 px-2 w-4/5 mx-auto'>
            <h1 className='text-4xl font-bold text-center mb-6'>Give Your Opinion</h1> 
            <div className='my-8 text-center'>
            <form onSubmit={handleSubmit}>

@@ -2,7 +2,7 @@ import React from 'react';
 
 const Blog = () => {
     return (
-        <div className='container mx-auto lg:px-2 px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-8'>
+        <div className='container mx-auto lg:px-2 px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-8 font-Space'>
             <div className=' text-center border-2 rounded-md p-4 bg-blue-50' style={{height:'250px'}}>
                 <h1 className='text-xl'>Q-1.What are the different ways to manage a state in a React application?</h1>
                 <p><b>Ans:</b>When we talk about state in our applications, it's important to be clear about what types of state actually matter.There are four main types of state you need to properly manage in your React apps:1|Local state

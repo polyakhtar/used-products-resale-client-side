@@ -7,10 +7,12 @@ import { useParams } from 'react-router-dom';
 
 const Products = () => {
     const {id}=useParams();
+    console.log(id)
   const [bookings, setBookings] = useState(null);
   const [products,setProducts]=useState([]);
+  console.log(products)
   useEffect(()=>{
-    fetch(`https://used-mobile-phone-resale-market-server.vercel.app/products/${id}`)
+    fetch(`http://localhost:5000/products/${id}`)
     .then(res=>res.json())
     .then(data=>{
         // console.log(data)

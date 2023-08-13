@@ -23,7 +23,7 @@ const handleSubmit=(event)=>{
         phone:phone,
         id:bookings._id
     }
-    fetch('https://used-mobile-phone-resale-market-server.vercel.app/bookings',{
+    fetch('http://localhost:5000/bookings',{
         method:"POST",
         headers:{
             'content-type':'application/json'
@@ -47,8 +47,8 @@ const handleSubmit=(event)=>{
   <div className="modal-box relative">
     <label htmlFor="booking-modal" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
     <h3 className="text-xl font-bold">
-      <span style={{color:'#24A148'}}>Category Name : </span>    
-      <span style={{color:'#FF0066'}}> {bookings.categoryName}</span> 
+      <span>Category Name : </span>    
+      <span className='text-blue-600'> {bookings.categoryName}</span> 
         </h3>
           <form onSubmit={handleSubmit}
             className="grid grid-cols-1 gap-3 mt-6"
@@ -97,7 +97,7 @@ const handleSubmit=(event)=>{
             />
             <br />
             <input
-              className=" btn btn-primary "
+              className=" btn bg-blue-600 hover:bg-blue-700"
               type="submit"
               value="Submit"
             />

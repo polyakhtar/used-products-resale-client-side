@@ -24,7 +24,8 @@ const Signup = () => {
           .then(result=>{
             const user=result.user;
             console.log(user)
-            toast('User created successfully')
+            toast('User created successfully');
+            navigate('/');
             const userInfo={
               displayName:data.name
             }
@@ -53,7 +54,7 @@ const Signup = () => {
     }
     const saveUser=(name,email,type)=>{
       const user={name,email,type};
-      fetch('https://used-mobile-phone-resale-market-server.vercel.app/users',{
+      fetch('http://localhost:5000/users',{
         method:"POST",
         headers:{
           'content-type':'application/json'
@@ -63,7 +64,7 @@ const Signup = () => {
       .then(res=>res.json())
       .then(data=>{
         // console.log(data);
-        setCreatedUserEmail(email)
+        setCreatedUserEmail(email);
       })
     }
     return (
@@ -101,7 +102,7 @@ className="input input-bordered w-full max-w-xs"/>
 <span className="label-text">Select an Option</span>
 </label>
 <select {...register("type")} className="select input-bordered w-full max-w-xs">
-  <option selected>User</option>
+  <option selected>Buyer</option>
   <option>Seller</option>
 </select>
 </div>

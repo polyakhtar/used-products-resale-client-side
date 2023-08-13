@@ -3,18 +3,18 @@ import { Link, Outlet } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 import useAdmin from '../../../hooks/useAdmin';
 import useSeller from '../../../hooks/useSeller/useSeller';
-import useUser from '../../../hooks/useUser/useUser';
 import Navbar from '../../Shared/Navbar/Navbar';
-// admin:poly322@gmail.com
-// pp:Pm1234%^&
+import useBuyer from '../../../hooks/useBuyer/useBuyer';
+
+
 
 
 const DashboardLayout = () => {
     const {user}=useContext(AuthContext);
-    console.log(user)
+    // console.log(user)
     const [isAdmin]=useAdmin(user?.email);
     const [isSeller]=useSeller(user?.email);
-    const [isUser]=useUser(user?.email)
+    const [isBuyer]=useBuyer(user?.email)
     return (
         <div>
             <Navbar></Navbar>
@@ -43,7 +43,7 @@ const DashboardLayout = () => {
         </>
       }
             {
-             isUser && <>
+             isBuyer && <>
               <li><Link to='/dashboard/myorders'>My Orders</Link></li>
               </>
             } 

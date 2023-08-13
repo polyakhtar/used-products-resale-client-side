@@ -8,7 +8,7 @@ const CategoriesData = ({category}) => {
         <div className="card bg-base-200 shadow-xl hover:-translate-y-2 duration-300">
   <figure className="px-10 pt-10">
   <Link to={`/products/${_id}`}>
-    <img src={image} alt="Shoes" className="rounded-xl" />
+    <img src={image} alt="" className="rounded-xl" />
     </Link>
   </figure>
   <div className="card-body items-center text-center">
