@@ -12,7 +12,7 @@ const Products = () => {
   const [products,setProducts]=useState([]);
   console.log(products)
   useEffect(()=>{
-    fetch(`http://localhost:5000/products/${id}`)
+    fetch(`https://used-products-resale-server-side-drab.vercel.app/products/${id}`)
     .then(res=>res.json())
     .then(data=>{
         // console.log(data)

@@ -19,12 +19,29 @@ const [loginUserEmail,setLoginUserEmail]=useState('');
       navigate (from,{replace:true});
     }
 const handleLogIn=data=>{
-    console.log(data)
+    // console.log(data)
     setLogInError('');
     logIn(data.email,data.password)
     .then(result=>{
       const user=result.user;
-      console.log(user);
+      // console.log(user);
+      const currentUser={
+        email:user.email
+      };
+      fetch('https://used-products-resale-server-side-drab.vercel.app/jwt',{
+        method:"POST",
+        headers:{
+          'content-type':'application/json'
+        },
+        body:JSON.stringify(currentUser)
+      })
+      .then(res=>res.json())
+      .then(data=>{
+        // console.log(data)
+        localStorage.setItem('mobileToken',data.token);
+         navigate(from,{replace:true})
+      })
+     
       setLoginUserEmail(data.email) 
     })
     .catch(error=>{
@@ -37,6 +54,7 @@ const handleGoogleSignIn=()=>{
     .then(result=>{
         const user=result.user;
         console.log(user);
+        navigate(from,{replace:true})
         setLoginUserEmail(user.email)
     })
     .catch(error=>{

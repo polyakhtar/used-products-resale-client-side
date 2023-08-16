@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 const Review = () => {
 const [reviews,setReviews]=useState([]);
 useEffect(()=>{
-  fetch('http://localhost:5000/reviews')
+  fetch('https://used-products-resale-server-side-drab.vercel.app/reviews')
   .then(res=>res.json())
   .then(data=>{
     setReviews(data)

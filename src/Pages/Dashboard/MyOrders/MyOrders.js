@@ -6,17 +6,17 @@ import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 import Loading from '../../Shared/Loading/Loading';
 const MyOrders = () => {
 const {user}=useContext(AuthContext);
-const url=`http://localhost:5000/bookings/email/${user.email}`;
+const url=`https://used-products-resale-server-side-drab.vercel.app/bookings?email=${user?.email}`;
 const {data:bookings=[],isLoading}=useQuery({
     queryKey:['bookings',user?.email],
     queryFn:async()=>{
         const res=await fetch(url,{
           headers:{
-            authorization:`bearer ${localStorage.getItem('accessToken')}`
+            authorization:`bearer ${localStorage.getItem('mobileToken')}`
           }
         });
         const data=await res.json();
-        return data;
+        return data;                          
     }
 })
 if(isLoading){
@@ -52,10 +52,10 @@ if(isLoading){
                 <td>{booking.price}</td>
                 <td>
                 {
-            !booking.paid && <Link to={`/dashboard/payment/${booking._id}`}><button className='btn btn-primary btn-sm'>Pay</button></Link>
+            !booking.paid && <Link to={`/dashboard/payment/${booking._id}`}><button className='btn bg-blue-600 hover:bg-blue-700 btn-sm'>Pay</button></Link>
           }
           {
-          booking?.paid && <span className='text-xl text-green-500'>Paid</span>
+          booking?.paid && <span className='text-xl font-semibold text-green-500'>Paid</span>
           }
                 </td>
               </tr>)

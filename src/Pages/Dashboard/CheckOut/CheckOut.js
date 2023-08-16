@@ -10,7 +10,7 @@ const stripe=useStripe();
 const elements=useElements();
 const {price,productName,email,_id}=booking;
 useEffect(() => {
-    fetch("http://localhost:5000/create-payment-intent", {
+    fetch("https://used-products-resale-server-side-drab.vercel.app/create-payment-intent", {
       method: "POST",
       headers: { 
         "Content-Type": "application/json",
@@ -71,7 +71,7 @@ useEffect(() => {
                 // setTransectionId(paymentIntent.id)
                 // stor payment into the database
         
-                fetch('http://localhost:5000/payments',{
+                fetch('https://used-products-resale-server-side-drab.vercel.app/payments',{
                   method:"POST",
                   headers:{
                     'content-type':'application/json',
@@ -111,7 +111,7 @@ useEffect(() => {
         }}
       />
       <button 
-      className='btn btn-sm btn-primary mt-6' 
+      className='btn bg-blue-600 hover:bg-blue-700 btn-sm mt-6' 
       type="submit" 
       disabled={!stripe || !clientSecret || processing}>
         Pay

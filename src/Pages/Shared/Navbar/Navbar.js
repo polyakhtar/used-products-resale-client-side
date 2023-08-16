@@ -22,7 +22,7 @@ const menu=<>
 </>
     return (
        
-      <div className="navbar bg-base-100 px-28 py-3 font-Space">
+      <div className="navbar bg-base-100 lg:px-28 py-3 font-Space">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -32,7 +32,7 @@ const menu=<>
             {menu}
            </ul>
         </div>
-        <Link to='/' className=" text-3xl font-bold text-blue-600 font-Space">SELL UP</Link>
+        <Link to='/' className=" text-3xl font-bold text-blue-600 font-Acme">SELL UP</Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1 text-lg font-semibold">

@@ -28,7 +28,7 @@ const handleSubmit = (event) => {
     location
   ) => {
     const feedback = { name, email, photoURL, review,location };
-    fetch("http://localhost:5000/review", {
+    fetch("https://used-products-resale-server-side-drab.vercel.app/review", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -81,7 +81,7 @@ const handleSubmit = (event) => {
             name="feedback"
           ></textarea>
         </div>
-       <input type='submit' className='btn btn-primary btn-wide my-6' value="Submit"/>
+       <input type='submit' className='btn bg-blue-600 hover:bg-blue-700 btn-wide my-6' value="Submit"/>
       </form>
            </div>
         </div>

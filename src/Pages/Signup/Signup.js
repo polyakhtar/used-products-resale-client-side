@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import useToken from '../../hooks/useToken';
 
@@ -13,6 +13,8 @@ const Signup = () => {
     const {register,formState: { errors },handleSubmit}=useForm();
     const [signUpError,setSignUpError]=useState('');
     const [createdUserEmail,setCreatedUserEmail]=useState('');
+    const location=useLocation();
+    const from=location.state?.from?.pathname||'/';
     const [token]=useToken(createdUserEmail);
     const navigate=useNavigate();
     if(token){
@@ -25,7 +27,7 @@ const Signup = () => {
             const user=result.user;
             console.log(user)
             toast('User created successfully');
-            navigate('/');
+            navigate(from,{replace:true})
             const userInfo={
               displayName:data.name
             }
@@ -45,6 +47,7 @@ const Signup = () => {
         .then(result=>{
             const user=result.user;
             console.log(user);
+            navigate(from,{replace:true})
             saveUser(user.displayName,user.email,user.type);
             setCreatedUserEmail(user.email)
         })
@@ -54,7 +57,7 @@ const Signup = () => {
     }
     const saveUser=(name,email,type)=>{
       const user={name,email,type};
-      fetch('http://localhost:5000/users',{
+      fetch('https://used-products-resale-server-side-drab.vercel.app/users',{
         method:"POST",
         headers:{
           'content-type':'application/json'

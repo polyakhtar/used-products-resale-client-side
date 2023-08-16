@@ -3,7 +3,7 @@ import React from 'react';
 const MyMobilesData = ({mobile,refetch}) => {
     const {_id,name,CategoryName,img,price,PurchaseYear,mobileNumber,location,condition}=mobile;
     const handleDeleteMobile=id=>{
-        fetch(`http://localhost:5000/addmobiles/${id}`,{
+        fetch(`https://used-products-resale-server-side-drab.vercel.app/addmobiles/${id}`,{
             method:'DELETE',
             headers:{
                 authorization:`bearer ${localStorage.getItem('accessToken')}`

@@ -6,8 +6,8 @@ const useBuyer = email => {
              const [isUserLoading,setIsUserLoading]=useState(true);
              useEffect(()=>{
          if(email){
-             console.log(email)
-         fetch(`http://localhost:5000/users/buyer/${email}`)
+            //  console.log(email)
+         fetch(`https://used-products-resale-server-side-drab.vercel.app/users/buyer/${email}`)
          .then(res=>res.json())
         .then(data=>{
              console.log('user',data)

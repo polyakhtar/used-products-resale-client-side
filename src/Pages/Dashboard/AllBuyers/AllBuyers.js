@@ -7,7 +7,7 @@ const AllBuyers = () => {
   const {data:Users=[],refetch,isLoading}=useQuery({
     queryKey:['Users'],
     queryFn:async()=>{
-      const res=await fetch('http://localhost:5000/users/buyer',{
+      const res=await fetch('https://used-products-resale-server-side-drab.vercel.app/users/buyer',{
         headers:{
           authorization:`bearer ${localStorage.getItem('accessToken')}`
         }
@@ -19,7 +19,7 @@ const AllBuyers = () => {
     
     const handleDelete=id=>{
       console.log(id)
-      fetch(`http://localhost:5000/users/buyer/${id}`,{
+      fetch(`https://used-products-resale-server-side-drab.vercel.app/users/buyer/${id}`,{
       method:"DELETE",
       
     })

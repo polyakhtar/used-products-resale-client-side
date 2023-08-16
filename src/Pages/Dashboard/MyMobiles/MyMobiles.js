@@ -7,7 +7,7 @@ const MyMobiles = () => {
 const {data:addmobiles=[],refetch,isLoading}=useQuery({
     queryKey:['addmobiles'],
     queryFn:async()=>{
-        const res=await fetch('http://localhost:5000/addmobiles');
+        const res=await fetch('https://used-products-resale-server-side-drab.vercel.app/addmobiles');
         const data=await res.json();
         return data;
     }
