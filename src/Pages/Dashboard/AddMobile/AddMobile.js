@@ -33,7 +33,7 @@ const AddMobile = () => {
     }
     return (
         <div className='text-center py-8 px-4'>
-        <h2 className='text-4xl font-bold text-center mb-6'>Please add a new Mobile</h2>
+        <h2 className='lg:text-4xl md:text-3xl text-2xl font-bold text-center mb-6'>Please add a new Mobile</h2>
         <form className='w-3/5 mx-auto' onSubmit={handleAddUser}>
         
             <input onBlur={handleInputBlur} name='name' type="text" placeholder="Mobile Name" className="input w-full input-bordered m-4" requird/>
